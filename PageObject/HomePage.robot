@@ -2,7 +2,7 @@
 Library            SeleniumLibrary
 
 *** Variables ***
-${buttonAsuransiJiwa}                   xpath=(//a[text()='Asuransi Jiwa']/parent::li)[1]
+${buttonAsuransiJiwa}                     xpath=(//a[text()='Asuransi Jiwa']/parent::li)[1]
 ${textDanaPensiunOnHomePage}              xpath=//ul[@class='mega-menus__child']//a[@href='/id/asuransi-jiwa/individu/dana-pensiun']
 
 *** Keywords ***

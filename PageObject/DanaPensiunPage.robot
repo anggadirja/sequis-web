@@ -12,9 +12,9 @@ ${buttoClosePopUp}                        xpath=//button[@data-content='x']
 user is on dana pensiun page 
     Wait Until Element Is Visible    ${textDanaPensiunActiveMenu}
     Element Should Be Visible        ${textDanaPensiunActiveMenu}
-    ${isDisplayed}    Run Keyword And Return Status    Wait Until Element Is Visible    ${buttoClosePopUp}    timeout=5
-    Run Keyword If    ${isDisplayed} == False          Log To Console                    not get popup cookies
-    ...    ELSE       Click Element    ${buttoClosePopUp}
+    ${isDisplayed}                   Run Keyword And Return Status    Wait Until Element Is Visible    ${buttoClosePopUp}    timeout=5
+    Run Keyword If                   ${isDisplayed} == False          Log To Console                   not get popup cookies
+    ...    ELSE                      Click Element                    ${buttoClosePopUp}
 
 user click button option on dana pensiun page
     Wait Until Element Is Visible    ${buttonOptionOnDanaPensiunPage}

@@ -29,20 +29,20 @@ user click dapatkan hasil on pensiun result page
     Click Element                    ${buttonDapatkanHasilOnPensiunResultPage}
 
 user input email on form get pensiun result
-    Wait Until Element Is Visible    ${inputEmailOnForm}
-    Input Text    ${inputEmailOnForm}    testangga21@gmail.com
+    Wait Until Element Is Visible     ${inputEmailOnForm}
+    Input Text                        ${inputEmailOnForm}    testangga21@gmail.com
 
 user input phone on form get pensiun result
     Wait Until Element Is Visible    ${inputPhoneOnForm}
-    Input Text    ${inputPhoneOnForm}    +6285775533511
+    Input Text                       ${inputPhoneOnForm}    +6285775533511
 
 user input address on form get pensiun result
     Wait Until Element Is Visible    ${inputAddressOnForm}
-    Input Text    ${inputAddressOnForm}    jalan buntu
+    Input Text                       ${inputAddressOnForm}    jalan buntu
 
 user click for province option on form get pensiun result
     Wait Until Element Is Visible    ${buttonProvinceOnForm}
-    Click Element    ${buttonProvinceOnForm}
+    Click Element                    ${buttonProvinceOnForm}
 
 user choose province option on form get pensiun result
     Wait Until Element Is Visible    ${dropdownOptionProvinceOnForm}
@@ -50,13 +50,12 @@ user choose province option on form get pensiun result
     ${random}                        Evaluate                                  random.randint(1, ${totalprovince})        modules=random
     ${index}                         Catenate                                  [${random}]
     ${provincename}                  Get Text                                  ${dropdownOptionProvinceOnForm}${index}
-    # Set Global Variable                      ${searchQuery}                    ${groupname}
     Set Global Variable              ${ProvinceName}                           ${provincename}
     Click Element                    ${dropdownOptionProvinceOnForm}${index}
 
 user click for city option on form get pensiun result
     Wait Until Element Is Visible    ${buttonCityOnForm}
-    Click Element    ${buttonCityOnForm}
+    Click Element                    ${buttonCityOnForm}
 
 user choose city option on form get pensiun result
     Wait Until Element Is Visible    ${dropdownOptionCityOnForm}
@@ -64,7 +63,6 @@ user choose city option on form get pensiun result
     ${random}                        Evaluate                                  random.randint(1, ${totalcity})        modules=random
     ${index}                         Catenate                                  [${random}]
     ${cityname}                      Get Text                                  ${dropdownOptionCityOnForm}${index}
-    # Set Global Variable                      ${searchQuery}                    ${groupname}
     Set Global Variable              ${CityName}                               ${cityname}
     Click Element                    ${dropdownOptionCityOnForm}${index}
 
@@ -74,7 +72,7 @@ user click approve TNC on form get pensiun result
 
 user click button dapatkan sekarang on form get pensiun result
     Wait Until Element Is Visible    ${buttonGetResultOnForm}
-    Click Element    ${buttonGetResultOnForm}
+    Click Element                    ${buttonGetResultOnForm}
 
 user input data to get pensiun result
     user input email on form get pensiun result
