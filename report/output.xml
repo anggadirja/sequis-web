@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.6 on darwin)" generated="20230620 11:52:01.350" rpa="false" schemaversion="3">
+<suite id="s1" name="DanaPensiunSuite" source="/Users/sehatq/Documents/sequis-web/TestSuite/DanaPensiunSuite.robot">
+<kw name="Begin Web Test" library="prod" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230620 11:52:01.464" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230620 11:52:01.464" endtime="20230620 11:52:07.521"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20230620 11:52:07.521" endtime="20230620 11:52:07.631"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230620 11:52:07.631" level="INFO">Opening url 'https://sequis.co.id/'</msg>
+<status status="PASS" starttime="20230620 11:52:07.631" endtime="20230620 11:52:22.348"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:01.464" endtime="20230620 11:52:22.348"/>
+</kw>
+<test id="s1-t1" name="verify user can calculate dana pensiun and back to recalculate" line="8">
+<kw name="Calculate dana pensiun and recalculate" library="DanaPensiunTest">
+<kw name="Given Calculate dana pensiun" library="DanaPensiunTest">
+<kw name="Given Access financial calculator page" library="DanaPensiunTest">
+<kw name="Given Access Dana Pensiun page" library="DanaPensiunTest">
+<kw name="Given user is on sequis home page" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:22.350" endtime="20230620 11:52:22.835"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:52:23.049" level="INFO">Element 'xpath=(//a[text()='Asuransi Jiwa']/parent::li)[1]' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:52:22.835" endtime="20230620 11:52:23.049"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:22.350" endtime="20230620 11:52:23.049"/>
+</kw>
+<kw name="when user go to dana pensiun from home page" library="HomePage">
+<kw name="user click menu asuransi jiwa" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:23.050" endtime="20230620 11:52:23.270"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:23.270" level="INFO">Clicking element 'xpath=(//a[text()='Asuransi Jiwa']/parent::li)[1]'.</msg>
+<status status="PASS" starttime="20230620 11:52:23.270" endtime="20230620 11:52:24.557"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:23.050" endtime="20230620 11:52:24.557"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textDanaPensiunOnHomePage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:24.557" endtime="20230620 11:52:24.986"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${textDanaPensiunOnHomePage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:24.986" level="INFO">Clicking element 'xpath=//ul[@class='mega-menus__child']//a[@href='/id/asuransi-jiwa/individu/dana-pensiun']'.</msg>
+<status status="PASS" starttime="20230620 11:52:24.986" endtime="20230620 11:52:34.535"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:23.049" endtime="20230620 11:52:34.535"/>
+</kw>
+<kw name="Then user is on dana pensiun page" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textDanaPensiunActiveMenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:34.536" endtime="20230620 11:52:34.608"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${textDanaPensiunActiveMenu}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:52:34.863" level="INFO">Element 'xpath=//a[@href='#' and text()='Dana Pensiun']' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:52:34.608" endtime="20230620 11:52:34.863"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isDisplayed}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${buttoClosePopUp}</arg>
+<arg>timeout=5</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttoClosePopUp}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:34.863" endtime="20230620 11:52:34.987"/>
+</kw>
+<msg timestamp="20230620 11:52:34.988" level="INFO">${isDisplayed} = True</msg>
+<status status="PASS" starttime="20230620 11:52:34.863" endtime="20230620 11:52:34.988"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${isDisplayed} == False</arg>
+<arg>Log To Console</arg>
+<arg>not get popup cookies</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${buttoClosePopUp}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttoClosePopUp}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:34.988" level="INFO">Clicking element 'xpath=//button[@data-content='x']'.</msg>
+<status status="PASS" starttime="20230620 11:52:34.988" endtime="20230620 11:52:35.382"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:34.988" endtime="20230620 11:52:35.382"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:34.535" endtime="20230620 11:52:35.382"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:22.350" endtime="20230620 11:52:35.382"/>
+</kw>
+<kw name="When user go to financial calculator page" library="DanaPensiunPage">
+<kw name="user click button option on dana pensiun page" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonOptionOnDanaPensiunPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:35.383" endtime="20230620 11:52:35.798"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonOptionOnDanaPensiunPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:35.799" level="INFO">Clicking element 'xpath=//span[contains(text(),'Silakan pilih di sini')]'.</msg>
+<status status="PASS" starttime="20230620 11:52:35.799" endtime="20230620 11:52:37.126"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:35.383" endtime="20230620 11:52:37.126"/>
+</kw>
+<kw name="user choose dana pensiun option" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dropdownOptionOnDanaPensiunPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:37.126" endtime="20230620 11:52:37.182"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dropdownOptionOnDanaPensiunPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:37.183" level="INFO">Clicking element 'xpath=//span[contains(text(),'Dana pensiun')]'.</msg>
+<status status="PASS" starttime="20230620 11:52:37.182" endtime="20230620 11:52:37.943"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:37.126" endtime="20230620 11:52:37.943"/>
+</kw>
+<kw name="user click button selanjutnya on dana pensiun page" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaOnDanaPensiunPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:37.944" endtime="20230620 11:52:37.956"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaOnDanaPensiunPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:37.956" level="INFO">Clicking element 'xpath=//button[contains(text(),'Selanjutnya')]'.</msg>
+<status status="PASS" starttime="20230620 11:52:37.956" endtime="20230620 11:52:39.131"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:37.943" endtime="20230620 11:52:39.131"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:35.382" endtime="20230620 11:52:39.132"/>
+</kw>
+<kw name="Then user is on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:39.132" endtime="20230620 11:52:42.367"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:52:42.556" level="INFO">Element 'xpath=//label[text()='Penghasilan Anda Per Bulan']/following-sibling::div//input' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:52:42.367" endtime="20230620 11:52:42.556"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:39.132" endtime="20230620 11:52:42.556"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:22.350" endtime="20230620 11:52:42.556"/>
+</kw>
+<kw name="When user input data for caculate dana pensiun" library="FinancialCalculatorPage">
+<kw name="user input current income" library="FinancialCalculatorPage">
+<kw name="user input income permonth" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:42.556" endtime="20230620 11:52:42.604"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:42.604" endtime="20230620 11:52:42.850"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<arg>5000000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:42.851" level="INFO">Typing text '5000000' into text field 'xpath=//label[text()='Penghasilan Anda Per Bulan']/following-sibling::div//input'.</msg>
+<status status="PASS" starttime="20230620 11:52:42.850" endtime="20230620 11:52:43.700"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:42.556" endtime="20230620 11:52:43.700"/>
+</kw>
+<kw name="user input tingkat inflasi" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputTingkatInflasi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:43.700" endtime="20230620 11:52:43.853"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputTingkatInflasi}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:43.853" endtime="20230620 11:52:44.061"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputTingkatInflasi}</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:44.062" level="INFO">Typing text '5' into text field 'xpath=//label[contains(text(),'Tingkat inflasi')]/following-sibling::input'.</msg>
+<status status="PASS" starttime="20230620 11:52:44.061" endtime="20230620 11:52:44.370"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:43.700" endtime="20230620 11:52:44.370"/>
+</kw>
+<kw name="user click button selanjutnya for step1 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep1OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:44.370" endtime="20230620 11:52:44.383"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep1OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:44.383" level="INFO">Clicking element 'xpath=(//button[@type='button' and contains(text(),'Selanjutnya')])[1]'.</msg>
+<status status="PASS" starttime="20230620 11:52:44.383" endtime="20230620 11:52:46.017"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:44.370" endtime="20230620 11:52:46.018"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:42.556" endtime="20230620 11:52:46.018"/>
+</kw>
+<kw name="user input data umur" library="FinancialCalculatorPage">
+<kw name="user input usia saat ini" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputUsiaSaatIni}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:46.018" endtime="20230620 11:52:46.476"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputUsiaSaatIni}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:46.476" endtime="20230620 11:52:46.635"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputUsiaSaatIni}</arg>
+<arg>29</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:46.635" level="INFO">Typing text '29' into text field 'xpath=//label[contains(text(),'Usia Anda Saat Ini')]/following-sibling::input'.</msg>
+<status status="PASS" starttime="20230620 11:52:46.635" endtime="20230620 11:52:46.737"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:46.018" endtime="20230620 11:52:46.737"/>
+</kw>
+<kw name="user input usia pensiun" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputUsiaPensiun}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:46.738" endtime="20230620 11:52:46.755"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputUsiaPensiun}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:46.755" endtime="20230620 11:52:46.938"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputUsiaPensiun}</arg>
+<arg>50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:46.939" level="INFO">Typing text '50' into text field 'xpath=//label[contains(text(),'Usia Pensiun')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:52:46.938" endtime="20230620 11:52:47.262"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:46.737" endtime="20230620 11:52:47.262"/>
+</kw>
+<kw name="user click button selanjutnya for step2 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep2OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:47.262" endtime="20230620 11:52:47.278"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep2OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:47.278" level="INFO">Clicking element 'xpath=(//button[@type='button' and contains(text(),'Selanjutnya')])[2]'.</msg>
+<status status="PASS" starttime="20230620 11:52:47.278" endtime="20230620 11:52:48.675"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:47.262" endtime="20230620 11:52:48.675"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:46.018" endtime="20230620 11:52:48.675"/>
+</kw>
+<kw name="user input data rasio penggantian" library="FinancialCalculatorPage">
+<kw name="user input rasio penggantian" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputRasioPenggantian}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:48.676" endtime="20230620 11:52:49.511"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputRasioPenggantian}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:49.511" endtime="20230620 11:52:49.783"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputRasioPenggantian}</arg>
+<arg>80</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:49.783" level="INFO">Typing text '80' into text field 'xpath=//label[contains(text(),'Rasio Penggantian')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:52:49.783" endtime="20230620 11:52:50.069"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:48.676" endtime="20230620 11:52:50.069"/>
+</kw>
+<kw name="user click button selanjutnya for step3 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep3OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:50.069" endtime="20230620 11:52:50.087"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep3OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:50.088" level="INFO">Clicking element 'xpath=(//button[@type='button' and contains(text(),'Selanjutnya')])[3]'.</msg>
+<status status="PASS" starttime="20230620 11:52:50.087" endtime="20230620 11:52:51.153"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:50.069" endtime="20230620 11:52:51.153"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:48.676" endtime="20230620 11:52:51.153"/>
+</kw>
+<kw name="user input data pemasukan saat usia pensiun" library="FinancialCalculatorPage">
+<kw name="user input lama pensiun" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputLamaPensiun}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:51.153" endtime="20230620 11:52:51.628"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputLamaPensiun}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:51.628" endtime="20230620 11:52:52.331"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputLamaPensiun}</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:52.332" level="INFO">Typing text '10' into text field 'xpath=//label[contains(text(),'Lama pensiun')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:52:52.332" endtime="20230620 11:52:52.831"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:51.153" endtime="20230620 11:52:52.831"/>
+</kw>
+<kw name="user input suku bunga deposito" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputSukubungaDeposito}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:52.832" endtime="20230620 11:52:52.844"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputSukubungaDeposito}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:52:52.844" endtime="20230620 11:52:53.012"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputSukubungaDeposito}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:53.013" level="INFO">Typing text '4' into text field 'xpath=//label[contains(text(),'Suku Bunga Deposito')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:52:53.013" endtime="20230620 11:52:53.155"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:52.831" endtime="20230620 11:52:53.155"/>
+</kw>
+<kw name="user click button selanjutnya for step4 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep4OnFinancialCalculatorPage}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230620 11:52:53.155" endtime="20230620 11:52:53.566"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep4OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:53.566" endtime="20230620 11:52:53.708"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep4OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:53.708" level="INFO">Clicking element 'xpath=//button[@id='financial-pensiun-step4']'.</msg>
+<status status="PASS" starttime="20230620 11:52:53.708" endtime="20230620 11:52:59.270"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:53.155" endtime="20230620 11:52:59.270"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:51.153" endtime="20230620 11:52:59.270"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:42.556" endtime="20230620 11:52:59.270"/>
+</kw>
+<kw name="Then user is on pensiun result page" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonHitungUlangOnPensiunResultPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:59.270" endtime="20230620 11:52:59.356"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${buttonHitungUlangOnPensiunResultPage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:52:59.526" level="INFO">Element 'xpath=//input[@value='Hitung Ulang']' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:52:59.356" endtime="20230620 11:52:59.526"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${buttonDapatkanHasilOnPensiunResultPage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:52:59.554" level="INFO">Element 'xpath=//a[@href='#' and text()='Dapatkan Hasil']' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:52:59.526" endtime="20230620 11:52:59.555"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:59.270" endtime="20230620 11:52:59.555"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:22.350" endtime="20230620 11:52:59.555"/>
+</kw>
+<kw name="When user click hitung ulang on pensiun result page" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonHitungUlangOnPensiunResultPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:52:59.556" endtime="20230620 11:52:59.726"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonHitungUlangOnPensiunResultPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:52:59.726" level="INFO">Clicking element 'xpath=//input[@value='Hitung Ulang']'.</msg>
+<status status="PASS" starttime="20230620 11:52:59.726" endtime="20230620 11:53:03.845"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:59.555" endtime="20230620 11:53:03.845"/>
+</kw>
+<kw name="Then user is on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:03.845" endtime="20230620 11:53:04.295"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:04.309" level="INFO">Element 'xpath=//label[text()='Penghasilan Anda Per Bulan']/following-sibling::div//input' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:53:04.295" endtime="20230620 11:53:04.309"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:03.845" endtime="20230620 11:53:04.309"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:22.349" endtime="20230620 11:53:04.309"/>
+</kw>
+<status status="PASS" starttime="20230620 11:52:22.349" endtime="20230620 11:53:04.309"/>
+</test>
+<test id="s1-t2" name="verify user can calculate dana pensiun and get result" line="11">
+<kw name="Calculate dana pensiun and get result" library="DanaPensiunTest">
+<kw name="Given Calculate dana pensiun" library="DanaPensiunTest">
+<kw name="Given Access financial calculator page" library="DanaPensiunTest">
+<kw name="Given Access Dana Pensiun page" library="DanaPensiunTest">
+<kw name="Given user is on sequis home page" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:04.310" endtime="20230620 11:53:04.404"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:04.413" level="INFO">Element 'xpath=(//a[text()='Asuransi Jiwa']/parent::li)[1]' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:53:04.404" endtime="20230620 11:53:04.413"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:04.310" endtime="20230620 11:53:04.413"/>
+</kw>
+<kw name="when user go to dana pensiun from home page" library="HomePage">
+<kw name="user click menu asuransi jiwa" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:04.413" endtime="20230620 11:53:04.422"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonAsuransiJiwa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:04.423" level="INFO">Clicking element 'xpath=(//a[text()='Asuransi Jiwa']/parent::li)[1]'.</msg>
+<status status="PASS" starttime="20230620 11:53:04.423" endtime="20230620 11:53:05.429"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:04.413" endtime="20230620 11:53:05.429"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textDanaPensiunOnHomePage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:05.429" endtime="20230620 11:53:05.943"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${textDanaPensiunOnHomePage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:05.943" level="INFO">Clicking element 'xpath=//ul[@class='mega-menus__child']//a[@href='/id/asuransi-jiwa/individu/dana-pensiun']'.</msg>
+<status status="PASS" starttime="20230620 11:53:05.943" endtime="20230620 11:53:08.962"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:04.413" endtime="20230620 11:53:08.962"/>
+</kw>
+<kw name="Then user is on dana pensiun page" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textDanaPensiunActiveMenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:08.962" endtime="20230620 11:53:09.083"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${textDanaPensiunActiveMenu}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:09.098" level="INFO">Element 'xpath=//a[@href='#' and text()='Dana Pensiun']' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:53:09.083" endtime="20230620 11:53:09.099"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isDisplayed}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${buttoClosePopUp}</arg>
+<arg>timeout=5</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttoClosePopUp}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:14.487" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230620 11:53:14.487" level="FAIL">Element 'xpath=//button[@data-content='x']' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230620 11:53:09.099" endtime="20230620 11:53:14.491"/>
+</kw>
+<msg timestamp="20230620 11:53:14.491" level="INFO">${isDisplayed} = False</msg>
+<status status="PASS" starttime="20230620 11:53:09.099" endtime="20230620 11:53:14.491"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${isDisplayed} == False</arg>
+<arg>Log To Console</arg>
+<arg>not get popup cookies</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${buttoClosePopUp}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<arg>not get popup cookies</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230620 11:53:14.491" endtime="20230620 11:53:14.491"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:14.491" endtime="20230620 11:53:14.491"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:08.962" endtime="20230620 11:53:14.491"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:04.310" endtime="20230620 11:53:14.492"/>
+</kw>
+<kw name="When user go to financial calculator page" library="DanaPensiunPage">
+<kw name="user click button option on dana pensiun page" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonOptionOnDanaPensiunPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:14.492" endtime="20230620 11:53:14.711"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonOptionOnDanaPensiunPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:14.711" level="INFO">Clicking element 'xpath=//span[contains(text(),'Silakan pilih di sini')]'.</msg>
+<status status="PASS" starttime="20230620 11:53:14.711" endtime="20230620 11:53:15.844"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:14.492" endtime="20230620 11:53:15.844"/>
+</kw>
+<kw name="user choose dana pensiun option" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dropdownOptionOnDanaPensiunPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:15.845" endtime="20230620 11:53:15.976"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dropdownOptionOnDanaPensiunPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:15.976" level="INFO">Clicking element 'xpath=//span[contains(text(),'Dana pensiun')]'.</msg>
+<status status="PASS" starttime="20230620 11:53:15.976" endtime="20230620 11:53:16.432"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:15.844" endtime="20230620 11:53:16.432"/>
+</kw>
+<kw name="user click button selanjutnya on dana pensiun page" library="DanaPensiunPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaOnDanaPensiunPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:16.432" endtime="20230620 11:53:16.569"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaOnDanaPensiunPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:16.569" level="INFO">Clicking element 'xpath=//button[contains(text(),'Selanjutnya')]'.</msg>
+<status status="PASS" starttime="20230620 11:53:16.569" endtime="20230620 11:53:17.521"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:16.432" endtime="20230620 11:53:17.521"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:14.492" endtime="20230620 11:53:17.521"/>
+</kw>
+<kw name="Then user is on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:17.522" endtime="20230620 11:53:19.891"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:19.933" level="INFO">Element 'xpath=//label[text()='Penghasilan Anda Per Bulan']/following-sibling::div//input' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:53:19.891" endtime="20230620 11:53:19.933"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:17.521" endtime="20230620 11:53:19.933"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:04.310" endtime="20230620 11:53:19.933"/>
+</kw>
+<kw name="When user input data for caculate dana pensiun" library="FinancialCalculatorPage">
+<kw name="user input current income" library="FinancialCalculatorPage">
+<kw name="user input income permonth" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:19.934" endtime="20230620 11:53:19.950"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:19.950" endtime="20230620 11:53:20.206"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputIncomePerMonth}</arg>
+<arg>5000000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:20.207" level="INFO">Typing text '5000000' into text field 'xpath=//label[text()='Penghasilan Anda Per Bulan']/following-sibling::div//input'.</msg>
+<status status="PASS" starttime="20230620 11:53:20.206" endtime="20230620 11:53:20.600"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:19.934" endtime="20230620 11:53:20.600"/>
+</kw>
+<kw name="user input tingkat inflasi" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputTingkatInflasi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:20.600" endtime="20230620 11:53:20.700"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputTingkatInflasi}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:20.700" endtime="20230620 11:53:20.732"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputTingkatInflasi}</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:20.732" level="INFO">Typing text '5' into text field 'xpath=//label[contains(text(),'Tingkat inflasi')]/following-sibling::input'.</msg>
+<status status="PASS" starttime="20230620 11:53:20.732" endtime="20230620 11:53:20.804"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:20.600" endtime="20230620 11:53:20.804"/>
+</kw>
+<kw name="user click button selanjutnya for step1 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep1OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:20.804" endtime="20230620 11:53:20.948"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep1OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:20.948" level="INFO">Clicking element 'xpath=(//button[@type='button' and contains(text(),'Selanjutnya')])[1]'.</msg>
+<status status="PASS" starttime="20230620 11:53:20.948" endtime="20230620 11:53:21.522"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:20.804" endtime="20230620 11:53:21.522"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:19.934" endtime="20230620 11:53:21.522"/>
+</kw>
+<kw name="user input data umur" library="FinancialCalculatorPage">
+<kw name="user input usia saat ini" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputUsiaSaatIni}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:21.523" endtime="20230620 11:53:21.666"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputUsiaSaatIni}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:21.666" endtime="20230620 11:53:21.707"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputUsiaSaatIni}</arg>
+<arg>29</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:21.707" level="INFO">Typing text '29' into text field 'xpath=//label[contains(text(),'Usia Anda Saat Ini')]/following-sibling::input'.</msg>
+<status status="PASS" starttime="20230620 11:53:21.707" endtime="20230620 11:53:21.762"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:21.522" endtime="20230620 11:53:21.762"/>
+</kw>
+<kw name="user input usia pensiun" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputUsiaPensiun}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:21.762" endtime="20230620 11:53:21.870"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputUsiaPensiun}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:21.871" endtime="20230620 11:53:21.892"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputUsiaPensiun}</arg>
+<arg>50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:21.892" level="INFO">Typing text '50' into text field 'xpath=//label[contains(text(),'Usia Pensiun')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:53:21.892" endtime="20230620 11:53:21.981"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:21.762" endtime="20230620 11:53:21.981"/>
+</kw>
+<kw name="user click button selanjutnya for step2 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep2OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:21.981" endtime="20230620 11:53:22.013"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep2OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:22.013" level="INFO">Clicking element 'xpath=(//button[@type='button' and contains(text(),'Selanjutnya')])[2]'.</msg>
+<status status="PASS" starttime="20230620 11:53:22.013" endtime="20230620 11:53:22.208"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:21.981" endtime="20230620 11:53:22.208"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:21.522" endtime="20230620 11:53:22.208"/>
+</kw>
+<kw name="user input data rasio penggantian" library="FinancialCalculatorPage">
+<kw name="user input rasio penggantian" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputRasioPenggantian}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:22.208" endtime="20230620 11:53:22.552"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputRasioPenggantian}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:22.552" endtime="20230620 11:53:22.611"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputRasioPenggantian}</arg>
+<arg>80</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:22.611" level="INFO">Typing text '80' into text field 'xpath=//label[contains(text(),'Rasio Penggantian')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:53:22.611" endtime="20230620 11:53:22.710"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:22.208" endtime="20230620 11:53:22.710"/>
+</kw>
+<kw name="user click button selanjutnya for step3 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep3OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:22.710" endtime="20230620 11:53:22.871"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep3OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:22.871" level="INFO">Clicking element 'xpath=(//button[@type='button' and contains(text(),'Selanjutnya')])[3]'.</msg>
+<status status="PASS" starttime="20230620 11:53:22.871" endtime="20230620 11:53:23.136"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:22.710" endtime="20230620 11:53:23.137"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:22.208" endtime="20230620 11:53:23.137"/>
+</kw>
+<kw name="user input data pemasukan saat usia pensiun" library="FinancialCalculatorPage">
+<kw name="user input lama pensiun" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputLamaPensiun}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:23.137" endtime="20230620 11:53:23.750"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputLamaPensiun}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:23.750" endtime="20230620 11:53:24.201"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputLamaPensiun}</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:24.201" level="INFO">Typing text '10' into text field 'xpath=//label[contains(text(),'Lama pensiun')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:53:24.201" endtime="20230620 11:53:24.318"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:23.137" endtime="20230620 11:53:24.318"/>
+</kw>
+<kw name="user input suku bunga deposito" library="FinancialCalculatorPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputSukubungaDeposito}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:24.318" endtime="20230620 11:53:24.462"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${inputSukubungaDeposito}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230620 11:53:24.462" endtime="20230620 11:53:24.498"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputSukubungaDeposito}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:24.498" level="INFO">Typing text '4' into text field 'xpath=//label[contains(text(),'Suku Bunga Deposito')]/following-sibling::input[@type='number']'.</msg>
+<status status="PASS" starttime="20230620 11:53:24.498" endtime="20230620 11:53:24.578"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:24.318" endtime="20230620 11:53:24.578"/>
+</kw>
+<kw name="user click button selanjutnya for step4 on financaial calculator page" library="FinancialCalculatorPage">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep4OnFinancialCalculatorPage}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230620 11:53:24.578" endtime="20230620 11:53:25.045"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep4OnFinancialCalculatorPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:25.046" endtime="20230620 11:53:25.058"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonSelanjutnyaStep4OnFinancialCalculatorPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:25.058" level="INFO">Clicking element 'xpath=//button[@id='financial-pensiun-step4']'.</msg>
+<status status="PASS" starttime="20230620 11:53:25.058" endtime="20230620 11:53:30.381"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:24.578" endtime="20230620 11:53:30.381"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:23.137" endtime="20230620 11:53:30.381"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:19.933" endtime="20230620 11:53:30.381"/>
+</kw>
+<kw name="Then user is on pensiun result page" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonHitungUlangOnPensiunResultPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:30.382" endtime="20230620 11:53:30.579"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${buttonHitungUlangOnPensiunResultPage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:30.596" level="INFO">Element 'xpath=//input[@value='Hitung Ulang']' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:53:30.579" endtime="20230620 11:53:30.596"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${buttonDapatkanHasilOnPensiunResultPage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230620 11:53:30.774" level="INFO">Element 'xpath=//a[@href='#' and text()='Dapatkan Hasil']' is displayed.</msg>
+<status status="PASS" starttime="20230620 11:53:30.597" endtime="20230620 11:53:30.774"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:30.381" endtime="20230620 11:53:30.774"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:04.310" endtime="20230620 11:53:30.774"/>
+</kw>
+<kw name="When user click dapatkan hasil on pensiun result page" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonDapatkanHasilOnPensiunResultPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:30.774" endtime="20230620 11:53:30.784"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonDapatkanHasilOnPensiunResultPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:30.784" level="INFO">Clicking element 'xpath=//a[@href='#' and text()='Dapatkan Hasil']'.</msg>
+<status status="PASS" starttime="20230620 11:53:30.784" endtime="20230620 11:53:31.380"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:30.774" endtime="20230620 11:53:31.380"/>
+</kw>
+<kw name="And user input data to get pensiun result" library="PensiunResultPage">
+<kw name="user input email on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputEmailOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:31.381" endtime="20230620 11:53:32.727"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputEmailOnForm}</arg>
+<arg>testangga21@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:32.727" level="INFO">Typing text 'testangga21@gmail.com' into text field 'xpath=//input[@id='email']'.</msg>
+<status status="PASS" starttime="20230620 11:53:32.727" endtime="20230620 11:53:33.123"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:31.380" endtime="20230620 11:53:33.123"/>
+</kw>
+<kw name="user input phone on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputPhoneOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:33.123" endtime="20230620 11:53:33.136"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputPhoneOnForm}</arg>
+<arg>+6285775533511</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:33.137" level="INFO">Typing text '+6285775533511' into text field 'xpath=//input[@id='phone']'.</msg>
+<status status="PASS" starttime="20230620 11:53:33.136" endtime="20230620 11:53:33.340"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:33.123" endtime="20230620 11:53:33.340"/>
+</kw>
+<kw name="user input address on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputAddressOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:33.340" endtime="20230620 11:53:33.354"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputAddressOnForm}</arg>
+<arg>jalan buntu</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:33.354" level="INFO">Typing text 'jalan buntu' into text field 'xpath=//input[@id='address']'.</msg>
+<status status="PASS" starttime="20230620 11:53:33.354" endtime="20230620 11:53:33.525"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:33.340" endtime="20230620 11:53:33.525"/>
+</kw>
+<kw name="user click for province option on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonProvinceOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:33.525" endtime="20230620 11:53:33.539"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonProvinceOnForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:33.539" level="INFO">Clicking element 'xpath=//select[@id='province']/parent::span'.</msg>
+<status status="PASS" starttime="20230620 11:53:33.539" endtime="20230620 11:53:34.274"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:33.525" endtime="20230620 11:53:34.275"/>
+</kw>
+<kw name="user choose province option on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dropdownOptionProvinceOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:34.275" endtime="20230620 11:53:34.315"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${totalprovince}</var>
+<arg>${dropdownOptionProvinceOnForm}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230620 11:53:34.608" level="INFO">${totalprovince} = 43</msg>
+<status status="PASS" starttime="20230620 11:53:34.316" endtime="20230620 11:53:34.608"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(1, ${totalprovince})</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230620 11:53:34.609" level="INFO">${random} = 27</msg>
+<status status="PASS" starttime="20230620 11:53:34.608" endtime="20230620 11:53:34.609"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${index}</var>
+<arg>[${random}]</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230620 11:53:34.609" level="INFO">${index} = [27]</msg>
+<status status="PASS" starttime="20230620 11:53:34.609" endtime="20230620 11:53:34.609"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${provincename}</var>
+<arg>${dropdownOptionProvinceOnForm}${index}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:34.693" level="INFO">${provincename} = NUSA TENGGARA BARAT</msg>
+<status status="PASS" starttime="20230620 11:53:34.609" endtime="20230620 11:53:34.693"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ProvinceName}</arg>
+<arg>${provincename}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230620 11:53:34.693" level="INFO">${ProvinceName} = NUSA TENGGARA BARAT</msg>
+<status status="PASS" starttime="20230620 11:53:34.693" endtime="20230620 11:53:34.693"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dropdownOptionProvinceOnForm}${index}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:34.693" level="INFO">Clicking element 'xpath=(//select[@id='province']/option[contains(text(),'Silakan pilih')]/following-sibling::option)[27]'.</msg>
+<status status="PASS" starttime="20230620 11:53:34.693" endtime="20230620 11:53:35.644"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:34.275" endtime="20230620 11:53:35.644"/>
+</kw>
+<kw name="user click for city option on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonCityOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:35.645" endtime="20230620 11:53:35.660"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonCityOnForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:35.660" level="INFO">Clicking element 'xpath=//select[@id='city']/parent::span'.</msg>
+<status status="PASS" starttime="20230620 11:53:35.660" endtime="20230620 11:53:36.240"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:35.644" endtime="20230620 11:53:36.240"/>
+</kw>
+<kw name="user choose city option on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dropdownOptionCityOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:36.240" endtime="20230620 11:53:36.341"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${totalcity}</var>
+<arg>${dropdownOptionCityOnForm}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230620 11:53:36.549" level="INFO">${totalcity} = 10</msg>
+<status status="PASS" starttime="20230620 11:53:36.341" endtime="20230620 11:53:36.549"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(1, ${totalcity})</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230620 11:53:36.550" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20230620 11:53:36.549" endtime="20230620 11:53:36.550"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${index}</var>
+<arg>[${random}]</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230620 11:53:36.550" level="INFO">${index} = [6]</msg>
+<status status="PASS" starttime="20230620 11:53:36.550" endtime="20230620 11:53:36.550"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cityname}</var>
+<arg>${dropdownOptionCityOnForm}${index}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:36.737" level="INFO">${cityname} = LOMBOK TENGAH</msg>
+<status status="PASS" starttime="20230620 11:53:36.550" endtime="20230620 11:53:36.737"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${CityName}</arg>
+<arg>${cityname}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230620 11:53:36.738" level="INFO">${CityName} = LOMBOK TENGAH</msg>
+<status status="PASS" starttime="20230620 11:53:36.738" endtime="20230620 11:53:36.738"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dropdownOptionCityOnForm}${index}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:36.738" level="INFO">Clicking element 'xpath=(//select[@id='city']/option[contains(text(),'Silahkan Pilih')]/following-sibling::option)[6]'.</msg>
+<status status="PASS" starttime="20230620 11:53:36.738" endtime="20230620 11:53:37.328"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:36.240" endtime="20230620 11:53:37.328"/>
+</kw>
+<kw name="user click approve TNC on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textApproveTNCOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:37.329" endtime="20230620 11:53:37.369"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${textApproveTNCOnForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:37.369" level="INFO">Clicking element 'xpath=//label[text()='Saya bersedia dihubungi untuk mendapatkan informasi selanjutnya dari Sequis']'.</msg>
+<status status="PASS" starttime="20230620 11:53:37.369" endtime="20230620 11:53:37.892"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:37.328" endtime="20230620 11:53:37.892"/>
+</kw>
+<kw name="user click button dapatkan sekarang on form get pensiun result" library="PensiunResultPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buttonGetResultOnForm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230620 11:53:37.892" endtime="20230620 11:53:37.905"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buttonGetResultOnForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230620 11:53:37.905" level="INFO">Clicking element 'xpath=//button[@id='save-financial']'.</msg>
+<status status="PASS" starttime="20230620 11:53:37.905" endtime="20230620 11:53:39.439"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:37.892" endtime="20230620 11:53:39.439"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:31.380" endtime="20230620 11:53:39.439"/>
+</kw>
+<kw name="Then form get pensiun result should be closed" library="PensiunResultPage">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${inputEmailOnForm}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<msg timestamp="20230620 11:53:49.747" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230620 11:53:49.747" level="FAIL">Element 'xpath=//input[@id='email']' still visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20230620 11:53:39.439" endtime="20230620 11:53:49.747"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${inputEmailOnForm}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="NOT RUN" starttime="20230620 11:53:49.747" endtime="20230620 11:53:49.747"/>
+</kw>
+<status status="FAIL" starttime="20230620 11:53:39.439" endtime="20230620 11:53:49.747"/>
+</kw>
+<status status="FAIL" starttime="20230620 11:53:04.309" endtime="20230620 11:53:49.747"/>
+</kw>
+<status status="FAIL" starttime="20230620 11:53:04.309" endtime="20230620 11:53:49.748">Element 'xpath=//input[@id='email']' still visible after 10 seconds.</status>
+</test>
+<kw name="End Web Test" library="prod" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230620 11:53:49.748" endtime="20230620 11:53:49.900"/>
+</kw>
+<status status="PASS" starttime="20230620 11:53:49.748" endtime="20230620 11:53:49.901"/>
+</kw>
+<status status="FAIL" starttime="20230620 11:52:01.351" endtime="20230620 11:53:49.901"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="DanaPensiunSuite">DanaPensiunSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
