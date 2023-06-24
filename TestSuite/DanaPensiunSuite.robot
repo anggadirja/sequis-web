@@ -17,3 +17,4 @@ verify user can calculate dana pensiun and get result
     [Tags]             positive    danapensiun    calculate    getresult
     [Template]         Calculate dana pensiun and get result
     random     random    random    random    random    random    random
+    
