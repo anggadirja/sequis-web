@@ -8,9 +8,12 @@ Suite Teardown      End Web Test
 verify user can calculate dana pensiun and back to recalculate
     [Documentation]    This scenario for calculate dana pensiun dan hitung ulang
     [Tags]             positive    danapensiun    calculate    recalculate   
-    Calculate dana pensiun and recalculate
+    [Template]         Calculate dana pensiun and recalculate
+    6000000    5          29        45        80        10        4            
+    random     random     random    random    random    random    random
 
 verify user can calculate dana pensiun and get result
     [Documentation]    This scenario for calculate dana pensiun and get result
     [Tags]             positive    danapensiun    calculate    getresult
-    Calculate dana pensiun and get result
+    [Template]         Calculate dana pensiun and get result
+    random     random    random    random    random    random    random

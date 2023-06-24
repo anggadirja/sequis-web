@@ -1,6 +1,4 @@
 *** Settings ***
-
-
 Resource    ../PageObject/HomePage.robot
 Resource    ../PageObject/DanaPensiunPage.robot
 Resource    ../PageObject/FinancialCalculatorPage.robot
@@ -18,17 +16,20 @@ Access financial calculator page
     Then user is on financaial calculator page
 
 Calculate dana pensiun
+    [Arguments]    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
     Given Access financial calculator page
-    When user input data for caculate dana pensiun
+    When user input data for caculate dana pensiun    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
     Then user is on pensiun result page
 
 Calculate dana pensiun and recalculate
-    Given Calculate dana pensiun
+    [Arguments]    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
+    Given Calculate dana pensiun    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
     When user click hitung ulang on pensiun result page
     Then user is on financaial calculator page
 
 Calculate dana pensiun and get result
-    Given Calculate dana pensiun
+    [Arguments]    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
+    Given Calculate dana pensiun    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
     When user click dapatkan hasil on pensiun result page 
     And user input data to get pensiun result
     Then form get pensiun result should be closed

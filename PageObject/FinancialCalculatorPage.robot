@@ -22,65 +22,116 @@ user is on financaial calculator page
     Element Should Be Visible        ${inputIncomePerMonth}
 
 user input income permonth 
+    [Arguments]    ${incomePerMonth}
     Wait Until Element Is Visible    ${inputIncomePerMonth}
     Clear Element Text               ${inputIncomePerMonth}
-    Input Text                       ${inputIncomePerMonth}    5000000
+    Run Keyword If                   '${incomePerMonth}' == 'random'    get random value for income per month
+    ...    ELSE                      Set Global Variable                ${IncomePerMonthValue}                    ${incomePerMonth}
+    Input Text                       ${inputIncomePerMonth}             ${IncomePerMonthValue}
 
+get random value for income per month
+    ${random}                        Evaluate                           random.randint(5000000, 10000000)        modules=random
+    Set Global Variable              ${IncomePerMonthValue}             ${random}
+    
 user input tingkat inflasi
+    [Arguments]    ${tingkatInflasi}
     Wait Until Element Is Visible     ${inputTingkatInflasi}
     Clear Element Text                ${inputTingkatInflasi}
-    Input Text                        ${inputTingkatInflasi}    5
+    Run Keyword If                    '${tingkatInflasi}'=='random'    get random value for tingkat inflasi
+    ...    ELSE                       Set Global Variable              ${TingkatInflasiValue}                ${tingkatInflasi}
+    Input Text                        ${inputTingkatInflasi}           ${TingkatInflasiValue}
+
+get random value for tingkat inflasi
+    ${random}              Evaluate                  random.randint(3,6)    modules=random
+    Set Global Variable    ${TingkatInflasiValue}    ${random}
 
 user click button selanjutnya for step1 on financaial calculator page
     Wait Until Element Is Visible    ${buttonSelanjutnyaStep1OnFinancialCalculatorPage}
     Click Element                    ${buttonSelanjutnyaStep1OnFinancialCalculatorPage}
 
 user input current income
-    user input income permonth
-    user input tingkat inflasi
+    [Arguments]    ${incomePerMonth}    ${tingkatInflasi}
+    user input income permonth    ${incomePerMonth}
+    user input tingkat inflasi    ${tingkatInflasi}
     user click button selanjutnya for step1 on financaial calculator page
 
 user input usia saat ini
+    [Arguments]    ${currentAge}
     Wait Until Element Is Visible    ${inputUsiaSaatIni}
     Clear Element Text               ${inputUsiaSaatIni}
-    Input Text                       ${inputUsiaSaatIni}    29
+    Run Keyword If                   '${currentAge}' == 'random'    get random value for current age
+    ...    ELSE                      Set Global Variable            ${CurrentAgeValue}                ${currentAge}
+    Input Text                       ${inputUsiaSaatIni}            ${CurrentAgeValue}
 
+get random value for current age
+    ${random}                Evaluate                random.randint(17, 30)    modules=random
+    Set Global Variable      ${CurrentAgeValue}      ${random}
 user input usia pensiun
+    [Arguments]    ${retirementAge}
     Wait Until Element Is Visible    ${inputUsiaPensiun}
     Clear Element Text               ${inputUsiaPensiun}
-    Input Text                       ${inputUsiaPensiun}    50
+    Run Keyword If                   '${retirementAge}'=='random'    get random value for retirement age
+    ...    ELSE                      Set Global Variable             ${RetirementAgeValue}                ${retirementAge}
+    Input Text                       ${inputUsiaPensiun}             ${RetirementAgeValue}
+
+get random value for retirement age
+    ${random}              Evaluate                 random.randint(40,60)    modules=random
+    Set Global Variable    ${RetirementAgeValue}    ${random}
 
 user click button selanjutnya for step2 on financaial calculator page
     Wait Until Element Is Visible    ${buttonSelanjutnyaStep2OnFinancialCalculatorPage}
     Click Element                    ${buttonSelanjutnyaStep2OnFinancialCalculatorPage}
 
 user input data umur
-    user input usia saat ini
-    user input usia pensiun
+    [Arguments]    ${currentAge}    ${retirementAge}
+    user input usia saat ini    ${currentAge}
+    user input usia pensiun     ${retirementAge}    
     user click button selanjutnya for step2 on financaial calculator page
 
 user input rasio penggantian 
+    [Arguments]    ${rasioPennggantian}
     Wait Until Element Is Visible    ${inputRasioPenggantian}
     Clear Element Text               ${inputRasioPenggantian}
-    Input Text                       ${inputRasioPenggantian}    80
+    Run Keyword If                   '${rasioPennggantian}'=='random'    get random value for rasio pensiun
+    ...    ELSE                      Set Global Variable                 ${RasioPenggantianValue}                ${rasioPennggantian}
+    Input Text                       ${inputRasioPenggantian}            ${RasioPenggantianValue}
+
+get random value for rasio pensiun
+    ${random}                Evaluate                    random.randint(75,125)
+    Set Global Variable      ${RasioPenggantianValue}    ${random}
 
 user click button selanjutnya for step3 on financaial calculator page
     Wait Until Element Is Visible    ${buttonSelanjutnyaStep3OnFinancialCalculatorPage}
     Click Element                    ${buttonSelanjutnyaStep3OnFinancialCalculatorPage}
 
 user input data rasio penggantian
-    user input rasio penggantian
+    [Arguments]    ${rasioPennggantian}
+    user input rasio penggantian    ${rasioPennggantian}
     user click button selanjutnya for step3 on financaial calculator page
 
 user input lama pensiun
+    [Arguments]    ${lamaPensiun}
     Wait Until Element Is Visible    ${inputLamaPensiun}
     Clear Element Text               ${inputLamaPensiun}
-    Input Text                       ${inputLamaPensiun}    10
+    Run Keyword If                   '${lamaPensiun}' == 'random'    get random value for lama pensiun
+    ...    ELSE                      Set Global Variable             ${LamaPensiunValue}                ${lamaPensiun}
+    Input Text                       ${inputLamaPensiun}             ${LamaPensiunValue}
+
+get random value for lama pensiun
+    ${random}              Evaluate               random.randint(1, 50)    modules=random
+    Set Global Variable    ${LamaPensiunValue}    ${random}
 
 user input suku bunga deposito 
+    [Arguments]    ${bungaDeposito}
     Wait Until Element Is Visible    ${inputSukubungaDeposito}
     Clear Element Text               ${inputSukubungaDeposito}
-    Input Text                       ${inputSukubungaDeposito}    4
+    Run Keyword If                   '${bungaDeposito}'=='random'    get random value for bunga deposito
+    ...    ELSE                      Set Global Variable             ${BungaDepositoValue}                ${bungaDeposito}
+    Input Text                       ${inputSukubungaDeposito}       ${BungaDepositoValue}
+
+get random value for bunga deposito
+    ${random}                Evaluate                 random.randint(3,6)    modules=random
+    Set Global Variable      ${BungaDepositoValue}    ${random}
 
 user click button selanjutnya for step4 on financaial calculator page
     Scroll Element Into View            ${buttonSelanjutnyaStep4OnFinancialCalculatorPage}
@@ -88,12 +139,14 @@ user click button selanjutnya for step4 on financaial calculator page
     Click Element                       ${buttonSelanjutnyaStep4OnFinancialCalculatorPage}
 
 user input data pemasukan saat usia pensiun
-    user input lama pensiun
-    user input suku bunga deposito
+    [Arguments]    ${lamaPensiun}    ${bungaDeposito}
+    user input lama pensiun    ${lamaPensiun}        
+    user input suku bunga deposito    ${bungaDeposito}
     user click button selanjutnya for step4 on financaial calculator page
 
 user input data for caculate dana pensiun
-    user input current income
-    user input data umur
-    user input data rasio penggantian
-    user input data pemasukan saat usia pensiun
+    [Arguments]    ${incomePerMonth}    ${tingkatInflasi}    ${currentAge}    ${retirementAge}    ${rasioPennggantian}    ${lamaPensiun}    ${bungaDeposito}
+    user input current income    ${incomePerMonth}    ${tingkatInflasi}
+    user input data umur    ${currentAge}    ${retirementAge}
+    user input data rasio penggantian    ${rasioPennggantian}
+    user input data pemasukan saat usia pensiun    ${lamaPensiun}    ${bungaDeposito}

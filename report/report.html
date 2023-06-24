@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 5.0.1 (Python 3.9.6 on darwin)" name="Generator">
+<meta content="Robot Framework 6.1 (Python 3.9.6 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -1150,7 +1150,7 @@ window.testdata = function () {
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1629,22 +1629,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,75606],[],[[4,0,5,[6,7,8,9],[0,20555,54942,10],[]]],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,49135],[],[[4,0,5,[6,7,8,9],[1,4091,20258],[]],[10,0,11,[6,7,12,8],[0,24349,24593,13],[]]],[],[2,1,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*DanaPensiunSuite","*/Users/sehatq/Documents/sequis-web/TestSuite/DanaPensiunSuite.robot","*../TestSuite/DanaPensiunSuite.robot","*verify user can calculate dana pensiun and get result","*<p>This scenario for calculate dana pensiun and get result\x3c/p>","*calculate","*danapensiun","*getresult","*positive","*Element 'xpath=//input[@id='email']' still visible after 10 seconds."]);
+window.output["strings"] = window.output["strings"].concat(["*","*DanaPensiunSuite","*/Users/mbp2020/Documents/sequis-web/TestSuite/DanaPensiunSuite.robot","*../TestSuite/DanaPensiunSuite.robot","*verify user can calculate dana pensiun and back to recalculate","*<p>This scenario for calculate dana pensiun dan hitung ulang\x3c/p>","*calculate","*danapensiun","*positive","*recalculate","*verify user can calculate dana pensiun and get result","*<p>This scenario for calculate dana pensiun and get result\x3c/p>","*getresult","*Element 'xpath=//input[@id='email']' still visible after 10 seconds."]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:55","fail":1,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:55","fail":1,"label":"calculate","pass":0,"skip":0},{"elapsed":"00:00:55","fail":1,"label":"danapensiun","pass":0,"skip":0},{"elapsed":"00:00:55","fail":1,"label":"getresult","pass":0,"skip":0},{"elapsed":"00:00:55","fail":1,"label":"positive","pass":0,"skip":0}],[{"elapsed":"00:01:16","fail":1,"id":"s1","label":"DanaPensiunSuite","name":"DanaPensiunSuite","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:45","fail":1,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:45","fail":1,"label":"calculate","pass":1,"skip":0},{"elapsed":"00:00:45","fail":1,"label":"danapensiun","pass":1,"skip":0},{"elapsed":"00:00:25","fail":1,"label":"getresult","pass":0,"skip":0},{"elapsed":"00:00:45","fail":1,"label":"positive","pass":1,"skip":0},{"elapsed":"00:00:20","fail":0,"label":"recalculate","pass":1,"skip":0}],[{"elapsed":"00:00:49","fail":1,"id":"s1","label":"DanaPensiunSuite","name":"DanaPensiunSuite","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1687249512494;
+window.output["baseMillis"] = 1687570591710;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 75614;
+window.output["generated"] = 49180;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1894,8 +1894,8 @@ function searchTests(suitePattern, testPattern, includePattern, excludePattern) 
 function scrollToSelector(base, query) {
     $('#test-details-container').css('min-height', $(window).height());
     var anchor = query ? base + '?' + encodeURIComponent(query) : base;
-    window.location.hash = '';
     window.location.hash = window.prevLocationHash = anchor;
+    document.getElementById('test-details-container').scrollIntoView();
 }
 
 function renderSelector(args, template, stats) {

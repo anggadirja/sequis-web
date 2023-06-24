@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.6 on darwin)" generated="20230619 18:58:15.644" rpa="false" schemaversion="3">
-<suite id="s1" name="Robot Interactive Console" source="/Users/sehatq/.vscode/extensions/robocorp.robotframework-lsp-1.11.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
+<robot generator="Robot 6.1 (Python 3.9.6 on darwin)" generated="20230624 07:27:52.921" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="/Users/mbp2020/.vscode/extensions/robocorp.robotframework-lsp-1.11.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20230619 18:58:15.653" endtime="20230619 18:58:22.370"/>
+<status status="PASS" starttime="20230624 07:27:52.949" endtime="20230624 07:27:55.778"/>
 </kw>
-<status status="PASS" starttime="20230619 18:58:15.653" endtime="20230619 18:58:22.371"/>
+<status status="PASS" starttime="20230624 07:27:52.949" endtime="20230624 07:27:55.779"/>
 </test>
-<status status="PASS" starttime="20230619 18:58:15.644" endtime="20230619 18:58:22.371"/>
+<status status="PASS" starttime="20230624 07:27:52.923" endtime="20230624 07:27:55.781"/>
 </suite>
 <statistics>
 <total>
